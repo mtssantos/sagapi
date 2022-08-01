@@ -8,4 +8,4 @@ server.get('/', (request, response) => {
    response.send("Olá mundo!");
 })
 
-server.listen(80);
+server.listen(443);
