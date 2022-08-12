@@ -15,7 +15,8 @@ server.get('/database', (request, response) => {
          console.log(err.message);
          return
       }
-      response.send("Banco de dados Conectado!");
+      response.send("Olá meus amigos!");
+      console.log("Banco de Dados Conectado!");
    })
 })
 
