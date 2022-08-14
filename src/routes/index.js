@@ -20,6 +20,11 @@ routes.get('/database', (request, response) => {
  
 routes.get('/users', usercontroller.ReadUsers);
 
+routes.post('/createuser', usercontroller.CreateUser);
+
+routes.put('/updateuser/:id', usercontroller.UpdateUser);
+
+routes.delete('/deleteuser/:id', usercontroller.DeleteUser);
 module.exports = routes;
 
 
