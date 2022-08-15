@@ -1,6 +1,6 @@
 const express = require("express");
 const UserController = require('../controllers/UserController');
-const { db } = require('../db');
+const { sequelize } = require('../db');
 
 const routes = express.Router();
 const usercontroller = new UserController();
@@ -8,23 +8,18 @@ const usercontroller = new UserController();
 routes.get('/', (request, response) => {
     response.send("Olá mundo!");
  });
- 
-routes.get('/database', (request, response) => {
-    db.connect(err => {
-       if(err){
-          console.log(err.message);
-          return
-       }
-    })
-});
+
  
 routes.get('/users', usercontroller.ReadUsers);
 
 routes.post('/createuser', usercontroller.CreateUser);
+routes.post('/login', usercontroller.Login);
 
 routes.put('/updateuser/:id', usercontroller.UpdateUser);
 
 routes.delete('/deleteuser/:id', usercontroller.DeleteUser);
+
+
 module.exports = routes;
 
 
